@@ -1,0 +1,71 @@
+<component name="libraryTable">
+  <library name="Spring" type="spring">
+    <CLASSES>
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-aop-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-aop-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-aop-5.0.2.RELEASE.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-aspects-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-aspects-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-aspects-5.0.2.RELEASE.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-beans-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-beans-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-beans-5.0.2.RELEASE.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-context-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-context-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-context-5.0.2.RELEASE.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-context-indexer-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-context-indexer-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-context-indexer-5.0.2.RELEASE.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-context-support-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-context-support-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-context-support-5.0.2.RELEASE.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-core-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-core-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-core-5.0.2.RELEASE.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-expression-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-expression-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-expression-5.0.2.RELEASE.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-instrument-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-instrument-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-instrument-5.0.2.RELEASE.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-jcl-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-jcl-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-jcl-5.0.2.RELEASE.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-jdbc-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-jdbc-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-jdbc-5.0.2.RELEASE.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-jms-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-jms-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-jms-5.0.2.RELEASE.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-messaging-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-messaging-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-messaging-5.0.2.RELEASE.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-orm-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-orm-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-orm-5.0.2.RELEASE.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-oxm-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-oxm-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-oxm-5.0.2.RELEASE.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-test-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-test-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-test-5.0.2.RELEASE.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-tx-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-tx-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-tx-5.0.2.RELEASE.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-web-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-web-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-web-5.0.2.RELEASE.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-webflux-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-webflux-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-webflux-5.0.2.RELEASE.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-webmvc-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-webmvc-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-webmvc-5.0.2.RELEASE.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-websocket-5.0.2.RELEASE-javadoc.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-websocket-5.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://C:/Program Files/Java/Spring/libs/spring-websocket-5.0.2.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
