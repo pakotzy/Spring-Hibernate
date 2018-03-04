@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Connection status</title>
+</head>
+<body>
+	<p th:text="'You connection to the Database is - ' + ${conStatus} + '!'"/>
+	<br>
+	<p>To a list of the customers go <a href="/customers">here</a></p>
+</body>
+</html>
