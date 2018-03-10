@@ -19,16 +19,24 @@ public class MainController {
 		return "index";
 	}
 
-	@GetMapping("/addForm")
-	public String addFrom(Model model) {
+	@GetMapping("/saveForm")
+	public String customerForm(Model model) {
 		Customer customer = new Customer();
 		model.addAttribute("customer", customer);
 
-		return "addForm";
+		return "customerForm";
+	}
+
+	@GetMapping("/updateForm")
+	public String updateForm(Long customerId, Model model) {
+		model.addAttribute("customer", customerRepository.findById(customerId).orElse(new Customer()));
+
+		return "customerForm";
 	}
 
 	@PostMapping("/save")
 	public String addNewCustomer(Customer customer) {
+		//		Supports saveOrUpdate
 		customerRepository.save(customer);
 
 		return "redirect:/";

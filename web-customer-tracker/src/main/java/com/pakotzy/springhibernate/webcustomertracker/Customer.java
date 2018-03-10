@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 
 	@Column(name = "first_name")
 	private String firstName;
@@ -28,6 +28,10 @@ public class Customer {
 		this.email = email;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -38,5 +42,9 @@ public class Customer {
 
 	public String getEmail() {
 		return email;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 }

@@ -13,18 +13,22 @@
 	<h2>CRM - Customer Relationship Manager</h2>
 </div>
 
-<input type="button" value="Add customer" onclick="location.href='addForm';"/>
+<input type="button" value="Add customer" onclick="location.href='saveForm';"/>
 
 <table id="customers">
 	<tr>
 		<th>First name</th>
 		<th>Last name</th>
 		<th>Email</th>
+		<th>Action</th>
 	</tr>
 	<tr th:each="customer : ${customers}">
 		<td th:text="${customer.getFirstName()}"/>
 		<td th:text="${customer.getLastName()}"/>
 		<td th:text="${customer.getEmail()}"/>
+		<td>
+			<a th:href="@{updateForm(customerId=${customer.getId()})}">Update</a>
+		</td>
 	</tr>
 </table>
 </body>
