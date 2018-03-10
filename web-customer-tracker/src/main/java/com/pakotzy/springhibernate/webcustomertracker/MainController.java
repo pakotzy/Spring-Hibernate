@@ -41,4 +41,11 @@ public class MainController {
 
 		return "redirect:/";
 	}
+
+	@GetMapping("/delete")
+	public String deleteCustomer(Long customerId) {
+		customerRepository.deleteById(customerId);
+
+		return "redirect:/";
+	}
 }

@@ -28,6 +28,8 @@
 		<td th:text="${customer.getEmail()}"/>
 		<td>
 			<a th:href="@{updateForm(customerId=${customer.getId()})}">Update</a>
+			|
+			<a th:href="@{delete(customerId=${customer.getId()})}">Delete</a>
 		</td>
 	</tr>
 </table>
