@@ -9,15 +9,11 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-@Order(1)
-public class Logging {
-	@Before("com.pakotzy.springaop.aspect.Pointcuts.everything()")
-	public void logActions(JoinPoint joinPoint) {
+@Order(3)
+public class Backups {
+	@Before("com.pakotzy.springaop.aspect.Pointcuts.everythingExceptReadsOrCalculations()")
+	public void backUpChanges(JoinPoint joinPoint) {
 		Signature signature = joinPoint.getSignature();
-		System.out.println("=====> Logging @Before " + signature);
-		Object[] args = joinPoint.getArgs();
-		for (Object arg : args) {
-			System.out.println(arg);
-		}
+		System.out.println("=====> Backing up @Before " + signature);
 	}
 }

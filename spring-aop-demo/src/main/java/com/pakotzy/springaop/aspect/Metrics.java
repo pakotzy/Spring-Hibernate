@@ -9,15 +9,11 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-@Order(1)
-public class Logging {
+@Order(2)
+public class Metrics {
 	@Before("com.pakotzy.springaop.aspect.Pointcuts.everything()")
-	public void logActions(JoinPoint joinPoint) {
+	public void writeMetrics(JoinPoint joinPoint) {
 		Signature signature = joinPoint.getSignature();
-		System.out.println("=====> Logging @Before " + signature);
-		Object[] args = joinPoint.getArgs();
-		for (Object arg : args) {
-			System.out.println(arg);
-		}
+		System.out.println("=====> Spying @Before " + signature);
 	}
 }
