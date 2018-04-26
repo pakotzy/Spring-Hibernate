@@ -40,6 +40,18 @@
 		    <version>5.0.4.RELEASE</version>
 	    </dependency>
 
+	    <dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.11</version>
+	    </dependency>
+
+	    <dependency>
+		    <groupId>com.mchange</groupId>
+		    <artifactId>c3p0</artifactId>
+		    <version>0.9.5.2</version>
+	    </dependency>
+
 
 	    <!-- Servlet, JSP and JSTL support -->
         <dependency>

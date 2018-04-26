@@ -20,7 +20,7 @@
 
 	<hr>
 
-	<security:authorize access="hasRole('Boss')">
+	<security:authorize access="hasRole('G')">
 		<a href="${pageContext.request.contextPath}/boss">Boss Page!</a>
 	</security:authorize>
 

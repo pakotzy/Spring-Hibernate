@@ -1,27 +1,29 @@
 package com.pakotzy.springsecurity.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.User.UserBuilder;
+
+import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
+	@Autowired
+	private DataSource securityDataSource;
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		UserBuilder users = User.withDefaultPasswordEncoder();
-		auth.inMemoryAuthentication().withUser(users.username("b").password("b").roles("Employee", "Boss"));
-		auth.inMemoryAuthentication().withUser(users.username("p").password("p").roles("Employee", "Pleb"));
+		auth.jdbcAuthentication().dataSource(securityDataSource);
 	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/").hasRole("Employee")
-								.antMatchers("/boss/**").hasRole("Boss")
+		http.authorizeRequests().antMatchers("/").hasRole("P")
+								.antMatchers("/boss/**").hasRole("G")
 				.and().formLogin().loginPage("/login").loginProcessingUrl("/authenticate").permitAll()
 				.and().logout().permitAll().and().exceptionHandling().accessDeniedPage("/access-denied");
 	}
