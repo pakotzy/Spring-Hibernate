@@ -7,6 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
+import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -57,6 +59,13 @@ public class AppConfig {
 		securityDataSource.setMaxPoolSize(getIntProperty("connection.pool.maxPoolSize"));
 		securityDataSource.setMaxIdleTime(getIntProperty("connection.pool.maxIdleTime"));
 		return securityDataSource;
+	}
+
+	@Bean
+	public UserDetailsManager userDetailsManager() {
+		JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager();
+		jdbcUserDetailsManager.setDataSource(securityDataSource());
+		return jdbcUserDetailsManager;
 	}
 
 	private int getIntProperty(String propName) {
