@@ -16,6 +16,20 @@ import java.util.List;
 public class StudentRestController {
 	private List<Student> students;
 
+	@GetMapping("/students")
+	public List<Student> getStudents() {
+		return students;
+	}
+
+	@GetMapping("/students/{studentId}")
+	public Student getStudent(@PathVariable("studentId") Long studentId) {
+		if (studentId >= students.size() || studentId < 0) {
+			throw new StudentNotFoundException("Student id not found: " + studentId);
+		}
+
+		return students.get(studentId.intValue());
+	}
+
 	@PostConstruct
 	public void populateData() {
 		students = new ArrayList<>();
@@ -36,17 +50,14 @@ public class StudentRestController {
 		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
 	}
 
-	@GetMapping("/students")
-	public List<Student> getStudents() {
-		return students;
-	}
+	@ExceptionHandler
+	public ResponseEntity<RestExceptionResponse> handleGenericException(Exception e) {
+		RestExceptionResponse error = new RestExceptionResponse();
 
-	@GetMapping("/students/{studentId}")
-	public Student getStudent(@PathVariable("studentId") Long studentId) {
-		if (studentId >= students.size() || studentId < 0) {
-			throw new StudentNotFoundException("Student id not found: " + studentId);
-		}
+		error.setStatus(HttpStatus.BAD_REQUEST.value());
+		error.setMessage(e.getMessage());
+		error.setTimestamp(System.currentTimeMillis());
 
-		return students.get(studentId.intValue());
+		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
 	}
 }
