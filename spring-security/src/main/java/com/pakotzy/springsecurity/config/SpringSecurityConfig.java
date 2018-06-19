@@ -25,6 +25,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers("/").hasRole("P")
 								.antMatchers("/boss/**").hasRole("G")
 				.and().formLogin().loginPage("/login").loginProcessingUrl("/authenticate").permitAll()
-				.and().logout().permitAll().and().exceptionHandling().accessDeniedPage("/access-denied");
+				.and().logout().permitAll()
+				.and().exceptionHandling().accessDeniedPage("/access-denied");
 	}
 }

@@ -15,8 +15,7 @@ public class UserDAO {
 	public UserDAO() {
 	}
 
-	public UserDAO(@NotNull(message = "is required") @Size(min = 1, message = "is required") String userName, @NotNull
-			(message = "is required") @Size(min = 1, message = "is required") String password) {
+	public UserDAO(String userName, String password) {
 		this.userName = userName;
 		this.password = password;
 	}
