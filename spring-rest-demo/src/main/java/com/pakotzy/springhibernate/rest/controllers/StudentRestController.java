@@ -1,6 +1,6 @@
 package com.pakotzy.springhibernate.rest.controllers;
 
-import com.pakotzy.springhibernate.rest.exceptions.RestExceptionResponse;
+import com.pakotzy.springhibernate.rest.exceptions.ExceptionResponse;
 import com.pakotzy.springhibernate.rest.exceptions.StudentNotFoundException;
 import com.pakotzy.springhibernate.rest.models.Student;
 import org.springframework.http.HttpStatus;
@@ -40,24 +40,13 @@ public class StudentRestController {
 	}
 
 	@ExceptionHandler
-	public ResponseEntity<RestExceptionResponse> handleStudentNotFoundException(StudentNotFoundException e) {
-		RestExceptionResponse error = new RestExceptionResponse();
+	public ResponseEntity<ExceptionResponse> handleStudentNotFoundException(StudentNotFoundException e) {
+		ExceptionResponse error = new ExceptionResponse();
 
 		error.setStatus(HttpStatus.NOT_FOUND.value());
 		error.setMessage(e.getMessage());
 		error.setTimestamp(System.currentTimeMillis());
 
 		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
-	}
-
-	@ExceptionHandler
-	public ResponseEntity<RestExceptionResponse> handleGenericException(Exception e) {
-		RestExceptionResponse error = new RestExceptionResponse();
-
-		error.setStatus(HttpStatus.BAD_REQUEST.value());
-		error.setMessage(e.getMessage());
-		error.setTimestamp(System.currentTimeMillis());
-
-		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
 	}
 }

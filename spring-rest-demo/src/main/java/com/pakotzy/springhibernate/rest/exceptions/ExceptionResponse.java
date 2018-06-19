@@ -1,14 +1,14 @@
 package com.pakotzy.springhibernate.rest.exceptions;
 
-public class RestExceptionResponse {
+public class ExceptionResponse {
 	private Integer status;
 	private String message;
 	private Long timestamp;
 
-	public RestExceptionResponse() {
+	public ExceptionResponse() {
 	}
 
-	public RestExceptionResponse(Integer status, String message, Long timestamp) {
+	public ExceptionResponse(Integer status, String message, Long timestamp) {
 		this.status = status;
 		this.message = message;
 		this.timestamp = timestamp;
