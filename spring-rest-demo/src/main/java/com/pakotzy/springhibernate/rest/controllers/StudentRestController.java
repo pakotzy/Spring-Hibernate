@@ -1,23 +1,39 @@
 package com.pakotzy.springhibernate.rest.controllers;
 
+import com.pakotzy.springhibernate.rest.exceptions.RestExceptionResponse;
+import com.pakotzy.springhibernate.rest.exceptions.StudentNotFoundException;
 import com.pakotzy.springhibernate.rest.models.Student;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api")
 public class StudentRestController {
-	private List<Student> students = new ArrayList<>();
+	private List<Student> students;
 
-	public StudentRestController() {
+	@PostConstruct
+	public void populateData() {
+		students = new ArrayList<>();
+
 		students.add(new Student("Pavlo", "Kotelnytskyi"));
 		students.add(new Student("Andrew", "Black"));
 		students.add(new Student("Mario", "Rossi"));
+	}
+
+	@ExceptionHandler
+	public ResponseEntity<RestExceptionResponse> handleStudentNotFoundException(StudentNotFoundException e) {
+		RestExceptionResponse error = new RestExceptionResponse();
+
+		error.setStatus(HttpStatus.NOT_FOUND.value());
+		error.setMessage(e.getMessage());
+		error.setTimestamp(System.currentTimeMillis());
+
+		return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
 	}
 
 	@GetMapping("/students")
@@ -25,8 +41,12 @@ public class StudentRestController {
 		return students;
 	}
 
-	@GetMapping("/students/{id}")
-	public Student getStudent(@PathVariable("id") Long id) {
-		return students.get(id.intValue());
+	@GetMapping("/students/{studentId}")
+	public Student getStudent(@PathVariable("studentId") Long studentId) {
+		if (studentId >= students.size() || studentId < 0) {
+			throw new StudentNotFoundException("Student id not found: " + studentId);
+		}
+
+		return students.get(studentId.intValue());
 	}
 }
