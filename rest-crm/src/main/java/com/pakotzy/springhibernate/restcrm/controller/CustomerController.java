@@ -4,6 +4,7 @@ import com.pakotzy.springhibernate.restcrm.entity.Customer;
 import com.pakotzy.springhibernate.restcrm.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,5 +19,10 @@ public class CustomerController {
 	@GetMapping("/customers")
 	public List<Customer> getCustomers() {
 		return customerService.getCustomers();
+	}
+
+	@GetMapping("/customers/{customerId}")
+	public Customer getCustomer(@PathVariable Integer customerId) {
+		return customerService.getCustomer(customerId);
 	}
 }
