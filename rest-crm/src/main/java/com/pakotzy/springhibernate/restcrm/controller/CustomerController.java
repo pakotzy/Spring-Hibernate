@@ -4,6 +4,7 @@ import com.pakotzy.springhibernate.restcrm.entity.Customer;
 import com.pakotzy.springhibernate.restcrm.exception.CustomerNotFoundException;
 import com.pakotzy.springhibernate.restcrm.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,5 +40,11 @@ public class CustomerController {
 
 		customerService.saveCustomer(customer);
 		return customer;
+	}
+
+	@DeleteMapping("customers/{customerId}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void deleteCustomer(@PathVariable Integer customerId) {
+		customerService.deleteCustomer(customerId);
 	}
 }

@@ -20,8 +20,8 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public void saveCustomer(Customer customer) {
-		repository.save(customer);
+	public Customer saveCustomer(Customer customer) {
+		return repository.save(customer);
 	}
 
 	@Override
@@ -36,7 +36,11 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public void deleteCustomer(int id) {
-		repository.deleteById(id);
+		try {
+			repository.deleteById(id);
+		} catch (Exception e) {
+			throw new CustomerNotFoundException();
+		}
 	}
 
 	@Override
