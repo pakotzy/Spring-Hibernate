@@ -1,6 +1,7 @@
 package com.pakotzy.springhibernate.restcrm.controller;
 
 import com.pakotzy.springhibernate.restcrm.entity.Customer;
+import com.pakotzy.springhibernate.restcrm.exception.CustomerNotFoundException;
 import com.pakotzy.springhibernate.restcrm.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -32,6 +33,10 @@ public class CustomerController {
 
 	@PutMapping("/customers")
 	public Customer updateCustomer(@RequestBody Customer customer) {
+		if (!customerService.isExists(customer.getId())) {
+			throw new CustomerNotFoundException();
+		}
+
 		customerService.saveCustomer(customer);
 		return customer;
 	}

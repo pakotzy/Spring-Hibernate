@@ -20,23 +20,28 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public void saveCustomer(Customer theCustomer) {
-		repository.save(theCustomer);
+	public void saveCustomer(Customer customer) {
+		repository.save(customer);
 	}
 
 	@Override
-	public Customer getCustomer(int theId) {
-		Customer customer = repository.findById(theId).orElse(null);
+	public Customer getCustomer(int id) {
+		Customer customer = repository.findById(id).orElse(null);
 		if (Objects.isNull(customer)) {
-			throw new CustomerNotFoundException("No such customer");
+			throw new CustomerNotFoundException();
 		}
 
 		return customer;
 	}
 
 	@Override
-	public void deleteCustomer(int theId) {
-		repository.deleteById(theId);
+	public void deleteCustomer(int id) {
+		repository.deleteById(id);
+	}
+
+	@Override
+	public boolean isExists(int id) {
+		return repository.existsById(id);
 	}
 }
 
